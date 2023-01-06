@@ -20,3 +20,13 @@ submission {
     // Optionally require public grader for mainBuildSubmission task. Default is false
     requireGraderPublic = false
 }
+
+jagr {
+    graders {
+        val graderPublic by getting {
+            configureDependencies {
+                implementation(libs.geantyref)
+            }
+        }
+    }
+}
