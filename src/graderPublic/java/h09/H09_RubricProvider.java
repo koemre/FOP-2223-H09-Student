@@ -33,16 +33,16 @@ import java.util.concurrent.Callable;
 
 public class H09_RubricProvider implements RubricProvider {
 
-    public static final Criterion H1_1 = createCriterion("H1.1 - IntegerFactory", () -> IntegerFactoryTest.class);
-    public static final Criterion H1_2 = createCriterion("H1.2 - DoubleFactory", () -> DoubleFactoryTest.class);
-    public static final Criterion H1_3 = createCriterion("H1.3 - StringFactory", () -> StringFactoryTest.class);
+    public static final Criterion H1_1 = createCriterion("H1.1 - IntegerFactory ist korrekt implementiert.", () -> IntegerFactoryTest.class);
+    public static final Criterion H1_2 = createCriterion("H1.2 - DoubleFactory ist korrekt implementiert.", () -> DoubleFactoryTest.class);
+    public static final Criterion H1_3 = createCriterion("H1.3 - StringFactory ist korrekt implementiert.", () -> StringFactoryTest.class);
 
     public static final Criterion H1_4_1 = createCriterion(
-        "BasicBinaryOperations ist korrekt implementiert",
+        "BasicBinaryOperations ist korrekt implementiert.",
         () -> BasicBinaryOperationsTest.class);
 
     public static final Criterion H1_4_2 = Criterion.builder()
-        .shortDescription("DoubleBasicBinaryOperations und IntegerBasicBinaryOperations sind korrekt implementiert")
+        .shortDescription("DoubleBasicBinaryOperations und IntegerBasicBinaryOperations sind korrekt implementiert.")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofClass(() -> DoubleBasicBinaryOperationsTest.class))
             .requirePass(JUnitTestRef.ofClass(() -> IntegerBasicBinaryOperationsTest.class))
@@ -52,7 +52,7 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H1_4_3 = createCriterion(
-        "StringBasicBinaryOperations ist korrekt implementiert",
+        "StringBasicBinaryOperations ist korrekt implementiert.",
         () -> StringBasicBinaryOperationsTest.class);
 
     public static final Criterion H1_4 = Criterion.builder()
@@ -65,12 +65,12 @@ public class H09_RubricProvider implements RubricProvider {
         .addChildCriteria(H1_1, H1_2, H1_3, H1_4)
         .build();
 
-    public static final Criterion H2_1 = createCriterion("H2.1 - Erster Satz von binären Operatorklassen", () -> H2_1_Test.class);
-    public static final Criterion H2_2 = createCriterion("H2.2 - ComposedBinaryOperator", () -> ComposedBinaryOperatorTest.class);
-    public static final Criterion H2_3 = createCriterion("H2.3 - MaxOfTwoOperator", () -> MaxOfTwoOperatorTest.class);
+    public static final Criterion H2_1 = createCriterion("H2.1 - Erster Satz von binären Operatorklassen ist korrekt implementiert.", () -> H2_1_Test.class);
+    public static final Criterion H2_2 = createCriterion("H2.2 - ComposedBinaryOperator ist korrekt implementiert.", () -> ComposedBinaryOperatorTest.class);
+    public static final Criterion H2_3 = createCriterion("H2.3 - MaxOfTwoOperator ist korrekt implementiert.", () -> MaxOfTwoOperatorTest.class);
 
     public static final Criterion H2_4_1 = Criterion.builder()
-        .shortDescription("Klassensignatur, Attribute und Konstruktor von SumWithCoefficients sind korrekt implementiert")
+        .shortDescription("Klassensignatur, Attribute und Konstruktor von SumWithCoefficients sind korrekt implementiert.")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> SumWithCoefficientsOperatorTest.class.getDeclaredMethod("testSignature")))
             .requirePass(JUnitTestRef.ofMethod(() -> SumWithCoefficientsOperatorTest.class.getDeclaredMethod("testFields")))
@@ -81,7 +81,7 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H2_4_2 = Criterion.builder()
-        .shortDescription("Die apply-Methode von SumWithCoefficients ist korrekt")
+        .shortDescription("Die apply-Methode von SumWithCoefficients ist korrekt.")
         .grader(Grader.testAwareBuilder()
             .requirePass(JUnitTestRef.ofMethod(() -> SumWithCoefficientsOperatorTest.class.getDeclaredMethod("testApplySignature")))
             .requirePass(JUnitTestRef.ofMethod(() -> SumWithCoefficientsOperatorTest.class.getDeclaredMethod("testApply")))
@@ -101,11 +101,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H3_1_1 = createCriterion(
-        "Klassensignature von ArraySequence ist korrekt und der Iterator funktioniert für einfache Fälle",
+        "Klassensignatur von ArraySequence ist korrekt und der Iterator funktioniert für einfache Fälle.",
         () -> ArraySequenceBasicTest.class);
 
     public static final Criterion H3_1_2 = Criterion.builder()
-        .shortDescription("ArraySequence is vollständig korrekt implementiert")
+        .shortDescription("ArraySequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H3_1 = Criterion.builder()
@@ -114,11 +114,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H3_2_1 = createCriterion(
-        "Klassensignatur von FibonacciSequence ist korrekt und der Iterator funktioniert für einfache Fälle",
+        "Klassensignatur von FibonacciSequence ist korrekt und der Iterator funktioniert für einfache Fälle.",
         () -> FibonacciSequenceBasicTest.class);
 
     public static final Criterion H3_2_2 = Criterion.builder()
-        .shortDescription("FibonacciSequence is vollständig korrekt implementiert")
+        .shortDescription("FibonacciSequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H3_2 = Criterion.builder()
@@ -127,11 +127,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H3_3_1 = createCriterion(
-        "Klassensignatur von BasicFactorySequence ist korrekt",
+        "Klassensignatur von BasicFactorySequence ist korrekt.",
         () -> BasicFactorySequenceBasicTest.class);
 
     public static final Criterion H3_3_2 = Criterion.builder()
-        .shortDescription("BasicFactorySequence is vollständig korrekt implementiert")
+        .shortDescription("BasicFactorySequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H3_3 = Criterion.builder()
@@ -145,15 +145,15 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H4_1_1 = createCriterion(
-        "Klassensignatur von FilteringSequence ist korrekt und der Iterator funktioniert für einfache Fälle",
+        "Klassensignatur von FilteringSequence ist korrekt und der Iterator funktioniert für einfache Fälle.",
         () -> FilteringSequenceBasicTest.class);
 
     public static final Criterion H4_1_2 = createCriterion(
-        "Attribute und konstruktor sind bis auf Wildcards korrekt implementiert",
+        "Attribute und Konstruktor sind bis auf Wildcards korrekt implementiert.",
         () -> FilteringSequenceIntermediateTest.class);
 
     public static final Criterion H4_1_3 = Criterion.builder()
-        .shortDescription("FilteringSequence is vollständig korrekt implementiert")
+        .shortDescription("FilteringSequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H4_1 = Criterion.builder()
@@ -162,15 +162,15 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H4_2_1 = createCriterion(
-        "Klassensignatur von TransformingSequence ist korrekt und der Iterator funktioniert für einfache Fälle",
+        "Klassensignatur von TransformingSequence ist korrekt und der Iterator funktioniert für einfache Fälle.",
         () -> TransformingSequenceBasicTest.class);
 
     public static final Criterion H4_2_2 = createCriterion(
-        "Attribute und konstruktor von TransformingSequence sind bis auf Wildcards korrekt implementiert",
+        "Attribute und Konstruktor von TransformingSequence sind bis auf Wildcards korrekt implementiert.",
         () -> TransformingSequenceIntermediateTest.class);
 
     public static final Criterion H4_2_3 = Criterion.builder()
-        .shortDescription("TransformingSequence is vollständig korrekt implementiert")
+        .shortDescription("TransformingSequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H4_2 = Criterion.builder()
@@ -179,19 +179,19 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H4_3_1 = createCriterion(
-        "Klassensignatur von FlatteningTransformingSequence ist korrekt und der Iterator funktioniert für einfache Fälle",
+        "Klassensignatur von FlatteningTransformingSequence ist korrekt und der Iterator funktioniert für einfache Fälle.",
         () -> FlatteningTransformingSequenceBasicTest.class);
 
     public static final Criterion H4_3_2 = createCriterion(
-        "Attribute und konstruktor von FlatteningTransformingSequence sind bis auf Wildcards korrekt implementiert",
+        "Attribute und Konstruktor von FlatteningTransformingSequence sind bis auf Wildcards korrekt implementiert.",
         () -> FlatteningTransformingSequenceIntermediateTest.class);
 
     public static final Criterion H4_3_3 = Criterion.builder()
-        .shortDescription("Generics von FlatteningTransformingSequence sind vollständig korrekt implementiert")
+        .shortDescription("Generics von FlatteningTransformingSequence sind vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H4_3_4 = Criterion.builder()
-        .shortDescription("FlatteningTransformingSequence is vollständig korrekt implementiert")
+        .shortDescription("FlatteningTransformingSequence ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H4_3 = Criterion.builder()
@@ -200,15 +200,15 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H4_4_1 = Criterion.builder()
-        .shortDescription("FilteringSequence.of ist korrekt implementiert")
+        .shortDescription("FilteringSequence.of ist korrekt implementiert.")
         .build();
 
     public static final Criterion H4_4_2 = Criterion.builder()
-        .shortDescription("TransformingSequence.of ist korrekt implementiert")
+        .shortDescription("TransformingSequence.of ist korrekt implementiert.")
         .build();
 
     public static final Criterion H4_4_3 = Criterion.builder()
-        .shortDescription("FlatteningTransformingSequence.of ist korrekt implementiert")
+        .shortDescription("FlatteningTransformingSequence.of ist korrekt implementiert.")
         .build();
 
     public static final Criterion H4_4 = Criterion.builder()
@@ -222,11 +222,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H5_1_1 = createCriterion(
-        "Klassensignatur von ToListCollector ist korrekt und funktioniert für einfache Fälle",
+        "Klassensignatur von ToListCollector ist korrekt und funktioniert für einfache Fälle.",
         () -> ToListCollectorBasicTest.class);
 
     public static final Criterion H5_1_2 = Criterion.builder()
-        .shortDescription("ToListCollector ist vollständig korrekt implementiert")
+        .shortDescription("ToListCollector ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H5_1 = Criterion.builder()
@@ -235,11 +235,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H5_2_1 = createCriterion(
-        "Klassensignatur von SummingCollector ist korrekt und funktioniert für einfache Fälle",
+        "Klassensignatur von SummingCollector ist korrekt und funktioniert für einfache Fälle.",
         () -> SummingCollectorBasicTest.class);
 
     public static final Criterion H5_2_2 = Criterion.builder()
-        .shortDescription("SummingCollector ist vollständig korrekt implementiert")
+        .shortDescription("SummingCollector ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H5_2 = Criterion.builder()
@@ -248,11 +248,11 @@ public class H09_RubricProvider implements RubricProvider {
         .build();
 
     public static final Criterion H5_3_1 = createCriterion(
-        "Klassensignatur von BinaryOpFoldCollector ist korrekt und funktioniert für einfache Fälle",
+        "Klassensignatur von BinaryOpFoldCollector ist korrekt und funktioniert für einfache Fälle.",
         () -> BinaryOpFoldCollectorBasicTest.class);
 
     public static final Criterion H5_3_2 = Criterion.builder()
-        .shortDescription("BinaryOpFoldCollector ist vollständig korrekt implementiert")
+        .shortDescription("BinaryOpFoldCollector ist vollständig korrekt implementiert.")
         .build();
 
     public static final Criterion H5_3 = Criterion.builder()
