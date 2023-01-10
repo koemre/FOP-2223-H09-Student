@@ -1,5 +1,6 @@
 package h09.operator;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
@@ -99,7 +100,7 @@ public final class H2_1_Test {
                         BinaryOperator.class, BinaryOperator.class, BinaryOperator.class),
                 "ComposedDoubleBinaryOperator does not have a correct constructor");
             final ComposedDoubleBinaryOperator operator =
-                Assertions.assertDoesNotThrow(() -> constructor.newInstance(op1, op2, op3),
+                InvokeAssertions.assertDoesNotThrow(() -> constructor.newInstance(op1, op2, op3),
                     "Failed to in invoke ComposedDoubleBinaryOperator constructor");
             Assertions.assertEquals(0.5, BinaryOperatorInvoker.invokeApply(operator, 1.5, 2.0),
                 "ComposedDoubleBinaryBinaryOperatorInvoker.invokeApply(operator,1.5, 2.0) should return 0.5");
@@ -164,7 +165,7 @@ public final class H2_1_Test {
                     DoubleSumWithCoefficientsOperator.class.getDeclaredConstructor(Double.class, Double.class),
                 "DoubleSumWithCoefficientsOperator does not have a correct constructor");
             final DoubleSumWithCoefficientsOperator operator =
-                Assertions.assertDoesNotThrow(() -> constructor.newInstance(3.0, -2.5),
+                InvokeAssertions.assertDoesNotThrow(() -> constructor.newInstance(3.0, -2.5),
                     "Failed to in invoke DoubleSumWithCoefficientsOperator constructor");
             Assertions.assertEquals(-0.5, BinaryOperatorInvoker.invokeApply(operator, 1.5, 2.0),
                 "DoubleSumWithCoefficientsOperator(3.0, -2.5).apply(1.5, 2.0) should return -0.5");

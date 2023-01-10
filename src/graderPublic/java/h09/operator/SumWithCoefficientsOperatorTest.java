@@ -1,5 +1,6 @@
 package h09.operator;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import h09.basic.BasicBinaryOperations;
 import h09.basic.StringBasicBinaryOperations;
@@ -89,7 +90,7 @@ public class SumWithCoefficientsOperatorTest {
                 SumWithCoefficientsOperator.class.getDeclaredConstructor(
                     BasicBinaryOperations.class, Object.class, Object.class),
             "SumWithCoefficientsOperator does not have a correct constructor");
-        final SumWithCoefficientsOperator sum = Assertions.assertDoesNotThrow(() ->
+        final SumWithCoefficientsOperator sum = InvokeAssertions.assertDoesNotThrow(() ->
                 sumCtor.newInstance(op, 3, 2),
             "Failed to invoke constructor for SumWithCoefficientsOperator");
         Assertions.assertEquals("abababcdcd", BinaryOperatorInvoker.invokeApply(sum,"ab", "cd"),

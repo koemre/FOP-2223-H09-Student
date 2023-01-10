@@ -1,5 +1,6 @@
 package h09.basic;
 
+import h09.InvokeAssertions;
 import h09.RandomExtensions;
 import h09.SignatureTestExtensions;
 import org.junit.jupiter.api.Assertions;
@@ -49,7 +50,7 @@ public final class StringFactoryTest {
         final Constructor<StringFactory> constructor = Assertions.assertDoesNotThrow(() ->
                 StringFactory.class.getDeclaredConstructor(int.class, String[].class),
             "StringFactory should have a constructor with int and String[] parameters");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 constructor.newInstance(start, text),
             "Failed to invoke StringFactory constructor with int and String[] parameters");
     }
@@ -58,7 +59,7 @@ public final class StringFactoryTest {
         final Method createMethod = Assertions.assertDoesNotThrow(() ->
                 StringFactory.class.getDeclaredMethod("create"),
             "StringFactory should have a create method");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 (String) createMethod.invoke(factory),
             "Failed to invoke StringFactory create method");
     }

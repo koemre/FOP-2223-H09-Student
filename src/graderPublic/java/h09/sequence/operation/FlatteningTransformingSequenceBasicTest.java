@@ -1,5 +1,6 @@
 package h09.sequence.operation;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import h09.sequence.PrimitiveSequence;
 import h09.sequence.Sequence;
@@ -41,10 +42,10 @@ public final class FlatteningTransformingSequenceBasicTest {
                 TransformingSequence.class.getDeclaredConstructor(Sequence.class, Function.class),
             "TransformingSequence does not have a correct constructor");
         final Sequence<String> ogSeq = Sequence.of("1", "23", "456");
-        final FlatteningTransformingSequence charSeq = Assertions.assertDoesNotThrow(() ->
+        final FlatteningTransformingSequence charSeq = InvokeAssertions.assertDoesNotThrow(() ->
                 constructorF.newInstance(ogSeq, (Function<String, Sequence<Character>>) s -> PrimitiveSequence.of(s.toCharArray())),
             "FlatteningTransformingSequence constructor should not throw an exception");
-        final TransformingSequence seq = Assertions.assertDoesNotThrow(() ->
+        final TransformingSequence seq = InvokeAssertions.assertDoesNotThrow(() ->
                 constructorT.newInstance(charSeq, (Function<Character, Integer>) Character::getNumericValue),
             "TransformingSequence constructor should not throw an exception");
         Sequence<Integer> limitedSeq = new LimitSequence<>((Sequence<Integer>) seq, 6);

@@ -1,5 +1,6 @@
 package h09.basic;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -66,7 +67,7 @@ public final class DoubleFactoryTest {
         final Constructor<DoubleFactory> constructor = Assertions.assertDoesNotThrow(() ->
                 DoubleFactory.class.getDeclaredConstructor(double.class, double.class),
             "DoubleFactory should have a constructor with two double parameters");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 constructor.newInstance(start, step),
             "Failed to invoke DoubleFactory constructor with two double parameters");
     }
@@ -75,7 +76,7 @@ public final class DoubleFactoryTest {
         final Method createMethod = Assertions.assertDoesNotThrow(() ->
                 DoubleFactory.class.getDeclaredMethod("create"),
             "DoubleFactory should have a create method");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 (Double) createMethod.invoke(factory),
             "Failed to invoke DoubleFactory create method");
     }

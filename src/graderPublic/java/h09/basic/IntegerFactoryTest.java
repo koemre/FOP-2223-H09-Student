@@ -1,5 +1,6 @@
 package h09.basic;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -66,7 +67,7 @@ public final class IntegerFactoryTest {
         final Constructor<IntegerFactory> constructor = Assertions.assertDoesNotThrow(() ->
                 IntegerFactory.class.getDeclaredConstructor(int.class, int.class),
             "IntegerFactory should have a constructor with two int parameters");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 constructor.newInstance(start, step),
             "Failed to invoke IntegerFactory constructor with two int parameters");
     }
@@ -75,7 +76,7 @@ public final class IntegerFactoryTest {
         final Method createMethod = Assertions.assertDoesNotThrow(() ->
                 IntegerFactory.class.getDeclaredMethod("create"),
             "IntegerFactory should have a create method");
-        return Assertions.assertDoesNotThrow(() ->
+        return InvokeAssertions.assertDoesNotThrow(() ->
                 (Integer) createMethod.invoke(factory),
             "Failed to invoke IntegerFactory create method");
     }

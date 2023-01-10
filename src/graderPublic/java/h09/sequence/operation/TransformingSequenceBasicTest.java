@@ -1,5 +1,6 @@
 package h09.sequence.operation;
 
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import h09.sequence.Sequence;
 import org.junit.jupiter.api.Assertions;
@@ -36,7 +37,7 @@ public final class TransformingSequenceBasicTest {
                 TransformingSequence.class.getDeclaredConstructor(Sequence.class, Function.class),
             "TransformingSequence does not have a correct constructor");
         final Sequence<Integer> og = Sequence.of(1, 2, 3, 4, 5);
-        final TransformingSequence sequence = Assertions.assertDoesNotThrow(() ->
+        final TransformingSequence sequence = InvokeAssertions.assertDoesNotThrow(() ->
                 constructor.newInstance(og, (Function<Integer, Double>) x -> x * 10.5),
             "TransformingSequence constructor should not throw an exception");
         final Iterator it = sequence.iterator();

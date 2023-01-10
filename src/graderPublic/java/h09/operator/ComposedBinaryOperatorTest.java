@@ -2,6 +2,7 @@ package h09.operator;
 
 import com.google.common.collect.Sets;
 import h09.FieldExtensions;
+import h09.InvokeAssertions;
 import h09.SignatureTestExtensions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -89,7 +90,7 @@ public final class ComposedBinaryOperatorTest {
                     BinaryOperator.class, BinaryOperator.class, BinaryOperator.class),
             "ComposedBinaryOperator does not have a correct constructor");
         final ComposedBinaryOperator operator =
-            Assertions.assertDoesNotThrow(() -> constructor.newInstance(concat, intersect, concat),
+            InvokeAssertions.assertDoesNotThrow(() -> constructor.newInstance(concat, intersect, concat),
                 "Failed to invoke ComposedBinaryOperator constructor");
         Assertions.assertEquals("abbcb", BinaryOperatorInvoker.invokeApply(operator, "ab", "bc"),
             "ComposedBinaryOperator(concat, intersect, concat).apply(\"ab\", \"bc\") should return \"abbcb\"");
