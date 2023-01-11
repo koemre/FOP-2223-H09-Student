@@ -78,7 +78,7 @@ public interface Sequence<T> {
      * @return the resulting sequence
      */
     static <T> Sequence<T> of(BasicFactory<T> factory) {
-        // TODO: H3.4 - remove if implemented
+        // TODO: H3.3 - remove if implemented
         throw new RuntimeException("Not implemented yet");
         // Uncomment the following line when implemented:
 //        return new BasicFactorySequence<>(factory);

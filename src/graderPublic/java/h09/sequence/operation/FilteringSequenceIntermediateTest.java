@@ -25,7 +25,7 @@ public final class FilteringSequenceIntermediateTest {
     void testFields() {
         final TypeVariable<Class<FilteringSequence>> genericT = FilteringSequence.class.getTypeParameters()[0];
         final Field[] fields = FilteringSequence.class.getDeclaredFields();
-        Assertions.assertEquals(2, fields.length, "ComposedBinaryOperator should have two fields");
+        Assertions.assertEquals(2, fields.length, "FilteringSequence should have two fields");
         FieldExtensions.assertPrivateFinal("FilteringSequence", fields);
 
         final Field sequenceField = Stream.of(fields).filter(field -> field.getType().equals(Sequence.class)).findAny()
