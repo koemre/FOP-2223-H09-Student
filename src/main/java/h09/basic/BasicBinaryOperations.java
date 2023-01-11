@@ -1,5 +1,7 @@
 package h09.basic;
 
-public interface BasicBinaryOperations/*TODO H1.4*/ {
-    // TODO: H1.4 - remove if implemented
+public interface BasicBinaryOperations<X,Y>  {
+
+    X add(X first, X second);
+    X mul(X first, Y second);
 }

@@ -1,5 +1,14 @@
 package h09.basic;
 
-public class DoubleBasicBinaryOperations/*TODO: H1.4*/ {
-    // TODO: H1.4 - remove if implemented
+public class DoubleBasicBinaryOperations implements BasicBinaryOperations<Double, Double> {
+    @Override
+    public Double add(Double first, Double second) {
+        return first + second;
+    }
+
+    @Override
+    public Double mul(Double first, Double second) {
+        return first * second;
+    }
+
 }

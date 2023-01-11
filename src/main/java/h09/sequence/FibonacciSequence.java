@@ -4,20 +4,24 @@ import java.util.Iterator;
 
 import static org.tudalgo.algoutils.student.Student.crash;
 
-public class FibonacciSequence/*TODO: H3.2*/ {
+public class FibonacciSequence implements Sequence <Integer> {
 // TODO: H3.2 - uncomment if implemented
 //    @Override
-    public Iterator</*TODO: H3.2 replace*/Object> iterator() {
+    public Iterator<Integer> iterator() {
         return new Iterator<>() {
-            // TODO: H3.2 - attributes here
+            int current = 0;
+            int next = 1;
             @Override
             public boolean hasNext() {
-                return crash(); // TODO: H3.2 - remove if implemented
+                return true;
             }
 
             @Override
-            public /*TODO: H3.2 replace*/Object next() {
-                return crash(); // TODO: H3.2 - remove if implemented
+            public Integer next() {
+                int result =next;
+                next+=current;
+                current = result;
+                return result;
             }
         };
     }

@@ -1,5 +1,13 @@
 package h09.operator;
 
-public class DoubleMaxOfTwoOperator/*TODO: H2.1*/ {
-    // TODO: H2.1 - remove if implemented
+import java.util.function.BinaryOperator;
+
+
+public class DoubleMaxOfTwoOperator implements BinaryOperator <Double> {
+
+    @Override
+    public Double apply(Double aDouble, Double aDouble2) {
+        return Math.max(aDouble, aDouble2);
+    }
+
 }

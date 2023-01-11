@@ -1,13 +1,25 @@
 package h09.sequence.operation;
 
+import h09.sequence.Sequence;
+
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 import static org.tudalgo.algoutils.student.Student.crash;
 
-public class FilteringSequence/*TODO: H4.1*/ {
-// TODO: H4.1 - uncomment if implemented
+public class FilteringSequence <T>/*TODO: H4.1*/ implements Sequence <T> {
+    private final Sequence sequence;
+    private final Predicate predicate;
+
+    public FilteringSequence(Sequence sequence, Predicate predicate) {
+        this.sequence = sequence;
+        this.predicate = predicate;
+    }
+
+    // TODO: H4.1 - uncomment if implemented
 //    @Override
-    public Iterator</*TODO: H4.1 replace*/Object> iterator() {
+    public Iterator<T> iterator() {
+        final Iterator iterator;
         return new Iterator<>() {
             // TODO: H4.1 - attributes here
             @Override
@@ -16,7 +28,7 @@ public class FilteringSequence/*TODO: H4.1*/ {
             }
 
             @Override
-            public /*TODO: H4.1 replace*/Object next() {
+            public /*TODO: H4.1 replace*/T next() {
                 return crash(); // TODO: H4.1 - remove if implemented
             }
         };

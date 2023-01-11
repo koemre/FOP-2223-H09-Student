@@ -4,20 +4,29 @@ import java.util.Iterator;
 
 import static org.tudalgo.algoutils.student.Student.crash;
 
-public class ArraySequence/*TODO: H3.1*/ {
+public class ArraySequence <T> implements Sequence <T> {
+    private T[] values;
+
+    public ArraySequence (T[] values){
+        this.values = values;
+    }
 // TODO: H3.1 - uncomment if implemented
 //    @Override
-    public Iterator</*TODO: H3.1 replace*/Object> iterator() {
+    public Iterator<T> iterator() {
         return new Iterator<>() {
-            // TODO: H3.1 - attributes here
+            int  index = 0;
             @Override
             public boolean hasNext() {
-                return crash(); // TODO: H3.1 - remove if implemented
+                if (index < values.length)
+                    return true;
+                return false;
             }
 
             @Override
-            public /*TODO: H3.1 replace*/Object next() {
-                return crash(); // TODO: H3.1 - remove if implemented
+            public /*TODO: H3.1 replace*/T next() {
+                int inde = index;
+                index++;
+                return values[inde];
             }
         };
     }
